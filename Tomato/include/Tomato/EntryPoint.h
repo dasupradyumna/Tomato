@@ -2,10 +2,10 @@
 
 #ifdef __GNUC__
 
-#include "Application.h"
-#include "Logger.h"
+ #include "Application.h"
+ #include "Logger.h"
 
-#include <memory>
+ #include <memory>
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
   CLIENT_DEBUG("Client initialized {0}", 500);
   CLIENT_TRACE("Client initialized {0}", 600);
 
-  std::unique_ptr<TM::Application> app{TM::CreateApplication()};
+  std::unique_ptr<TM::Application> app { TM::CreateApplication() };
   app->Run();
   return 0;
 }

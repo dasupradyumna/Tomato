@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "../src/Core.h"
 
 namespace TM
 {
@@ -13,5 +13,5 @@ namespace TM
     void Run();
   };
 
-  Application *CreateApplication();
+  Application* CreateApplication();
 }

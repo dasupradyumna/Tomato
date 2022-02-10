@@ -1,11 +1,11 @@
-#include "Logger.h"
+#include "Tomato/Logger.h"
 
 #include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace TM
 {
-  std::shared_ptr<spdlog::logger> Logger::s_CoreLogger{};
-  std::shared_ptr<spdlog::logger> Logger::s_ClientLogger{};
+  std::shared_ptr<spdlog::logger> Logger::s_CoreLogger {};
+  std::shared_ptr<spdlog::logger> Logger::s_ClientLogger {};
 
   void Logger::Init()
   {
