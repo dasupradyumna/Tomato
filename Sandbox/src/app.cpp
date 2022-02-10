@@ -2,9 +2,6 @@
 
 class Sandbox : public TM::Application
 {
-public:
-  Sandbox() {}
-  ~Sandbox() {}
 };
 
 TM::Application *TM::CreateApplication()

@@ -1,0 +1,3 @@
+[submodule "Tomato/vendor/spdlog"]
+	path = Tomato/vendor/spdlog
+	url = https://github.com/gabime/spdlog
