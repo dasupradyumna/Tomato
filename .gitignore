@@ -1,0 +1,6 @@
+# VS Code workspace folder
+.vscode/
+
+# build and binary folders
+bin/
+build/
