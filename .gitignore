@@ -4,3 +4,4 @@
 # build and binary folders
 bin/
 build/
+lib/
