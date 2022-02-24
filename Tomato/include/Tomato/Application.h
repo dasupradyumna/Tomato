@@ -1,17 +1,20 @@
-#pragma once
+#ifndef INCLUDE_TOMATO_APPLICATION_H_INCLUDED
+#define INCLUDE_TOMATO_APPLICATION_H_INCLUDED
 
 #include "../src/Core.h"
 
-namespace TM
+namespace tmt
 {
-  class ENG_API Application
+  class API application
   {
   public:
-    Application();
-    virtual ~Application();
+    application();
+    virtual ~application();
 
-    void Run();
+    void run();
   };
 
-  Application* CreateApplication();
+  application* create_application();
 }
+
+#endif

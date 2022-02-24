@@ -1,12 +1,12 @@
 #include "Tomato/Application.h"
 
-namespace TM
+namespace tmt
 {
-  Application::Application() { }
+  application::application() { }
 
-  Application::~Application() { }
+  application::~application() { }
 
-  void Application::Run()
+  void application::run()
   {
     while (true) { }
   }

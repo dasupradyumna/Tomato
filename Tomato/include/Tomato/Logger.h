@@ -1,36 +1,40 @@
-#pragma once
+#ifndef INCLUDE_TOMATO_LOGGER_H_INCLUDED
+#define INCLUDE_TOMATO_LOGGER_H_INCLUDED
 
 #include "../src/Core.h"
 
 #include <memory>
 #include <spdlog/spdlog.h>
 
-namespace TM
+namespace tmt
 {
-  class ENG_API Logger
+  class API logger
   {
-    static std::shared_ptr<spdlog::logger> s_CoreLogger;
-    static std::shared_ptr<spdlog::logger> s_ClientLogger;
-
   public:
-    static void Init();
+    static void init();
 
-    inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
+    inline static std::shared_ptr<spdlog::logger>& get_core_logger() { return __core_logger; }
 
-    inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+    inline static std::shared_ptr<spdlog::logger>& get_client_logger() { return __client_logger; }
+
+  private:
+    static std::shared_ptr<spdlog::logger> __core_logger;
+    static std::shared_ptr<spdlog::logger> __client_logger;
   };
 }
 
-#define CORE_TRACE(...)    ::TM::Logger::GetCoreLogger()->trace(__VA_ARGS__)
-#define CORE_DEBUG(...)    ::TM::Logger::GetCoreLogger()->debug(__VA_ARGS__)
-#define CORE_INFO(...)     ::TM::Logger::GetCoreLogger()->info(__VA_ARGS__)
-#define CORE_WARN(...)     ::TM::Logger::GetCoreLogger()->warn(__VA_ARGS__)
-#define CORE_ERROR(...)    ::TM::Logger::GetCoreLogger()->error(__VA_ARGS__)
-#define CORE_CRITICAL(...) ::TM::Logger::GetCoreLogger()->critical(__VA_ARGS__)
+#define CORE_TRACE(...)    ::tmt::logger::get_core_logger()->trace(__VA_ARGS__)
+#define CORE_DEBUG(...)    ::tmt::logger::get_core_logger()->debug(__VA_ARGS__)
+#define CORE_INFO(...)     ::tmt::logger::get_core_logger()->info(__VA_ARGS__)
+#define CORE_WARN(...)     ::tmt::logger::get_core_logger()->warn(__VA_ARGS__)
+#define CORE_ERROR(...)    ::tmt::logger::get_core_logger()->error(__VA_ARGS__)
+#define CORE_CRITICAL(...) ::tmt::logger::get_core_logger()->critical(__VA_ARGS__)
 
-#define CLIENT_TRACE(...)    ::TM::Logger::GetClientLogger()->trace(__VA_ARGS__)
-#define CLIENT_DEBUG(...)    ::TM::Logger::GetClientLogger()->debug(__VA_ARGS__)
-#define CLIENT_INFO(...)     ::TM::Logger::GetClientLogger()->info(__VA_ARGS__)
-#define CLIENT_WARN(...)     ::TM::Logger::GetClientLogger()->warn(__VA_ARGS__)
-#define CLIENT_ERROR(...)    ::TM::Logger::GetClientLogger()->error(__VA_ARGS__)
-#define CLIENT_CRITICAL(...) ::TM::Logger::GetClientLogger()->critical(__VA_ARGS__)
+#define CLIENT_TRACE(...)    ::tmt::logger::get_client_logger()->trace(__VA_ARGS__)
+#define CLIENT_DEBUG(...)    ::tmt::logger::get_client_logger()->debug(__VA_ARGS__)
+#define CLIENT_INFO(...)     ::tmt::logger::get_client_logger()->info(__VA_ARGS__)
+#define CLIENT_WARN(...)     ::tmt::logger::get_client_logger()->warn(__VA_ARGS__)
+#define CLIENT_ERROR(...)    ::tmt::logger::get_client_logger()->error(__VA_ARGS__)
+#define CLIENT_CRITICAL(...) ::tmt::logger::get_client_logger()->critical(__VA_ARGS__)
+
+#endif

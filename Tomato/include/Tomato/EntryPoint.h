@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INCLUDE_TOMATO_ENTRYPOINT_H_INCLUDED
+#define INCLUDE_TOMATO_ENTRYPOINT_H_INCLUDED
 
 #ifdef __GNUC__
 
@@ -9,7 +10,7 @@
 
 int main()
 {
-  TM::Logger::Init();
+  tmt::logger::init();
   CORE_CRITICAL("Core initialized {0}", 100);
   CORE_ERROR("Core initialized {0}", 200);
   CORE_WARN("Core initialized {0}", 300);
@@ -17,9 +18,11 @@ int main()
   CLIENT_DEBUG("Client initialized {0}", 500);
   CLIENT_TRACE("Client initialized {0}", 600);
 
-  std::unique_ptr<TM::Application> app { TM::CreateApplication() };
-  app->Run();
+  std::unique_ptr<tmt::application> app { tmt::create_application() };
+  app->run();
   return 0;
 }
+
+#endif
 
 #endif

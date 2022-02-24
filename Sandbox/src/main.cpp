@@ -1,10 +1,7 @@
 #include <Tomato/Application.h>
 #include <Tomato/EntryPoint.h>
 
-class Sandbox : public TM::Application
+class sandbox : public tmt::application
 { };
 
-TM::Application* TM::CreateApplication()
-{
-  return new Sandbox {};
-}
+tmt::application* tmt::create_application() { return new sandbox {}; }
