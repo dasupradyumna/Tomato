@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TOMATO_ENTRYPOINT_H_INCLUDED
-#define INCLUDE_TOMATO_ENTRYPOINT_H_INCLUDED
+#ifndef TOMATO_INCLUDE_TOMATO_ENTRYPOINT_H_1646142144
+#define TOMATO_INCLUDE_TOMATO_ENTRYPOINT_H_1646142144
 
 #ifdef __GNUC__
 
@@ -11,12 +11,11 @@
 int main()
 {
   tmt::logger::init();
-  CORE_CRITICAL("Core initialized {0}", 100);
-  CORE_ERROR("Core initialized {0}", 200);
-  CORE_WARN("Core initialized {0}", 300);
-  CLIENT_INFO("Client initialized {0}", 400);
-  CLIENT_DEBUG("Client initialized {0}", 500);
-  CLIENT_TRACE("Client initialized {0}", 600);
+  TMT_CORE_CRITICAL("Core initialized {0}", 100);
+  TMT_CORE_ERROR("Core initialized {0}", 200);
+  TMT_CORE_WARN("Core initialized {0}", 300);
+  TMT_CLIENT_INFO("Client initialized {0}", 400);
+  TMT_CLIENT_DEBUG("Client initialized {0}", 500);
 
   std::unique_ptr<tmt::application> app { tmt::create_application() };
   app->run();

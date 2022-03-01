@@ -1,5 +1,5 @@
-#ifndef SRC_CORE_H_INCLUDED
-#define SRC_CORE_H_INCLUDED
+#ifndef TOMATO_SRC_CORE_H_1646142246
+#define TOMATO_SRC_CORE_H_1646142246
 
 #ifdef __GNUC__
  #ifdef _WIN32
@@ -14,5 +14,7 @@
 #else
  #error Engine built only for GCC
 #endif
+
+#define TWO_POW_(x) (1 << x)
 
 #endif

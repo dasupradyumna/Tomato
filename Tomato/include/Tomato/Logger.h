@@ -1,10 +1,12 @@
-#ifndef INCLUDE_TOMATO_LOGGER_H_INCLUDED
-#define INCLUDE_TOMATO_LOGGER_H_INCLUDED
+#ifndef TOMATO_INCLUDE_TOMATO_LOGGER_H_1646142163
+#define TOMATO_INCLUDE_TOMATO_LOGGER_H_1646142163
 
 #include "../src/Core.h"
 
-#include <memory>
 #include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
+
+#include <memory>
 
 namespace tmt
 {
@@ -23,18 +25,18 @@ namespace tmt
   };
 }
 
-#define CORE_TRACE(...)    ::tmt::logger::get_core_logger()->trace(__VA_ARGS__)
-#define CORE_DEBUG(...)    ::tmt::logger::get_core_logger()->debug(__VA_ARGS__)
-#define CORE_INFO(...)     ::tmt::logger::get_core_logger()->info(__VA_ARGS__)
-#define CORE_WARN(...)     ::tmt::logger::get_core_logger()->warn(__VA_ARGS__)
-#define CORE_ERROR(...)    ::tmt::logger::get_core_logger()->error(__VA_ARGS__)
-#define CORE_CRITICAL(...) ::tmt::logger::get_core_logger()->critical(__VA_ARGS__)
+#define TMT_CORE_TRACE(...)    ::tmt::logger::get_core_logger()->trace(__VA_ARGS__)
+#define TMT_CORE_DEBUG(...)    ::tmt::logger::get_core_logger()->debug(__VA_ARGS__)
+#define TMT_CORE_INFO(...)     ::tmt::logger::get_core_logger()->info(__VA_ARGS__)
+#define TMT_CORE_WARN(...)     ::tmt::logger::get_core_logger()->warn(__VA_ARGS__)
+#define TMT_CORE_ERROR(...)    ::tmt::logger::get_core_logger()->error(__VA_ARGS__)
+#define TMT_CORE_CRITICAL(...) ::tmt::logger::get_core_logger()->critical(__VA_ARGS__)
 
-#define CLIENT_TRACE(...)    ::tmt::logger::get_client_logger()->trace(__VA_ARGS__)
-#define CLIENT_DEBUG(...)    ::tmt::logger::get_client_logger()->debug(__VA_ARGS__)
-#define CLIENT_INFO(...)     ::tmt::logger::get_client_logger()->info(__VA_ARGS__)
-#define CLIENT_WARN(...)     ::tmt::logger::get_client_logger()->warn(__VA_ARGS__)
-#define CLIENT_ERROR(...)    ::tmt::logger::get_client_logger()->error(__VA_ARGS__)
-#define CLIENT_CRITICAL(...) ::tmt::logger::get_client_logger()->critical(__VA_ARGS__)
+#define TMT_CLIENT_TRACE(...)    ::tmt::logger::get_client_logger()->trace(__VA_ARGS__)
+#define TMT_CLIENT_DEBUG(...)    ::tmt::logger::get_client_logger()->debug(__VA_ARGS__)
+#define TMT_CLIENT_INFO(...)     ::tmt::logger::get_client_logger()->info(__VA_ARGS__)
+#define TMT_CLIENT_WARN(...)     ::tmt::logger::get_client_logger()->warn(__VA_ARGS__)
+#define TMT_CLIENT_ERROR(...)    ::tmt::logger::get_client_logger()->error(__VA_ARGS__)
+#define TMT_CLIENT_CRITICAL(...) ::tmt::logger::get_client_logger()->critical(__VA_ARGS__)
 
 #endif
