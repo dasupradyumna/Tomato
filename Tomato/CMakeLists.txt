@@ -15,21 +15,23 @@ list(APPEND HEADER_FILES
   src/events/Mouse.h
 )
 
+list(APPEND THIRD_PARTY_INCLUDES
+  vendor/spdlog/include
+)
+
 add_library(Tomato SHARED
   ${SOURCE_FILES}
   ${HEADER_FILES}
 )
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  target_compile_options(Tomato PUBLIC "-fvisibility=hidden")
+  target_compile_options(Tomato PUBLIC "-fvisibility=hidden" "-H")
 endif()
-
-list(APPEND THIRD_PARTY_INCLUDES
-  vendor/spdlog/include
-)
 
 target_include_directories(Tomato
   PUBLIC ${THIRD_PARTY_INCLUDES} include
 )
+
+target_precompile_headers(Tomato PUBLIC std-pch.h spdlog-pch.h)
 
 install(TARGETS Tomato LIBRARY DESTINATION Sandbox/lib)

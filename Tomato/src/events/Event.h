@@ -3,8 +3,8 @@
 
 #include "../Core.h"
 
-#include <functional>
-#include <string>
+// pch include functional
+// pch include string
 
 namespace tmt
 {

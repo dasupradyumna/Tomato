@@ -1,6 +1,6 @@
 #include "Tomato/Logger.h"
 
-#include <spdlog/sinks/stdout_color_sinks.h>
+// pch include spdlog/sinks/stdout_color_sinks.h
 
 namespace tmt
 {

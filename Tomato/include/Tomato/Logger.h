@@ -3,10 +3,10 @@
 
 #include "../src/Core.h"
 
-#include <spdlog/spdlog.h>
-#include <spdlog/fmt/ostr.h>
+// pch include spdlog/spdlog.h
+// pch include spdlog/fmt/ostr.h
 
-#include <memory>
+// pch include memory
 
 namespace tmt
 {
