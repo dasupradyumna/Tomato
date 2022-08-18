@@ -4,15 +4,15 @@ list(APPEND SOURCE_FILES
 )
 
 list(APPEND HEADER_FILES
-  include/Tomato/Application.h
-  include/Tomato/EntryPoint.h
-  include/Tomato/Logger.h
+  include/Tomato/Application.hpp
+  include/Tomato/EntryPoint.hpp
+  include/Tomato/Logger.hpp
 
-  src/Core.h
-  src/events/Application.h
-  src/events/Event.h
-  src/events/Key.h
-  src/events/Mouse.h
+  src/Core.hpp
+  src/events/Application.hpp
+  src/events/Event.hpp
+  src/events/Key.hpp
+  src/events/Mouse.hpp
 )
 
 list(APPEND THIRD_PARTY_INCLUDES
@@ -32,6 +32,6 @@ target_include_directories(Tomato
   PUBLIC ${THIRD_PARTY_INCLUDES} include
 )
 
-target_precompile_headers(Tomato PUBLIC std-pch.h spdlog-pch.h)
+target_precompile_headers(Tomato PUBLIC std-pch.hpp spdlog-pch.hpp)
 
 install(TARGETS Tomato LIBRARY DESTINATION Sandbox/lib)

@@ -1,15 +1,14 @@
-#ifndef TOMATO_INCLUDE_TOMATO_ENTRYPOINT_H_1646142144
-#define TOMATO_INCLUDE_TOMATO_ENTRYPOINT_H_1646142144
+#ifndef TOMATO_INCLUDE_TOMATO_ENTRYPOINT_HPP_1646142144
+#define TOMATO_INCLUDE_TOMATO_ENTRYPOINT_HPP_1646142144
 
 #ifdef __GNUC__
 
- #include "Application.h"
- #include "Logger.h"
+ #include "Application.hpp"
+ #include "Logger.hpp"
 
 // pch include memory
 
-int main()
-{
+int main() {
   tmt::logger::init();
   TMT_CORE_CRITICAL("Core initialized {0}", 100);
   TMT_CORE_ERROR("Core initialized {0}", 200);

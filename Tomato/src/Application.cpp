@@ -1,7 +1,7 @@
-#include "Tomato/Application.h"
-#include "Tomato/Logger.h"
+#include "Tomato/Application.hpp"
+#include "Tomato/Logger.hpp"
 
-#include "events/Application.h"
+#include "events/Application.hpp"
 
 namespace tmt
 {
@@ -9,8 +9,7 @@ namespace tmt
 
   application::~application() { }
 
-  void application::run()
-  {
+  void application::run() {
     window_resize_event Ev { 1280, 720 };
     if (Ev.is_in_category(app)) TMT_CORE_TRACE(Ev);
     while (true) { }

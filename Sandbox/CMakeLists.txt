@@ -9,7 +9,7 @@ add_executable(Test
   ${HEADER_FILES}
 )
 
-target_link_libraries(Test PUBLIC Tomato)
+target_link_libraries(Test PRIVATE Tomato)
 
 set_target_properties(Test PROPERTIES
   BUILD_WITH_INSTALL_RPATH FALSE
