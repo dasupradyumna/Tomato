@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "gnu17",
+      "cppStandard": "gnu++17",
+      "defines": [
+        "TMT_ENABLE_ASSERTS"
+      ],
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "forcedInclude": [
+        "${workspaceFolder}/Tomato/std-pch.hpp",
+        "${workspaceFolder}/Tomato/spdlog-pch.hpp"
+      ],
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
+}
