@@ -6,9 +6,10 @@
  #include "Application.hpp"
  #include "Logger.hpp"
 
-// pch include memory
+// pch memory
 
-int main() {
+int main()
+{
   tmt::logger::init();
   TMT_CORE_CRITICAL("Core initialized {0}", 100);
   TMT_CORE_ERROR("Core initialized {0}", 200);

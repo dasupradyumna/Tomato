@@ -1,8 +1,8 @@
 #ifndef TOMATO_INCLUDE_TOMATO_APPLICATION_HPP_1646142124
 #define TOMATO_INCLUDE_TOMATO_APPLICATION_HPP_1646142124
 
-#include "../src/Core.hpp"
-#include "../src/Window.hpp"
+#include <../src/Core.hpp>
+#include <../src/Window.hpp>
 
 // pch memory
 

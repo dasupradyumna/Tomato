@@ -3,7 +3,7 @@
 
 #include "Event.hpp"
 
-// pch include sstream
+// pch sstream
 
 namespace tmt
 {
@@ -15,7 +15,8 @@ namespace tmt
 
     inline float get_y() const { return __mouse_y; }
 
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
       std::stringstream out;
       out << "Event mouse_moved : [ " << __mouse_x << ", " << __mouse_y << " ]";
       return out.str();
@@ -31,17 +32,16 @@ namespace tmt
 
   class API mouse_scrolled_event : public event {
   public:
-    mouse_scrolled_event(float x, float y)
-      : __offset_x { x }, __offset_y { y } { }
+    mouse_scrolled_event(float x, float y) : __offset_x { x }, __offset_y { y } { }
 
     inline float get_offset_x() const { return __offset_x; }
 
     inline float get_offset_y() const { return __offset_y; }
 
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
       std::stringstream out;
-      out << "Event mouse_scrolled : [ " << __offset_x << ", " << __offset_y
-          << " ]";
+      out << "Event mouse_scrolled : [ " << __offset_x << ", " << __offset_y << " ]";
       return out.str();
     }
 
@@ -69,7 +69,8 @@ namespace tmt
   public:
     mouse_button_pressed_event(int button) : mouse_button_event { button } { }
 
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
       std::stringstream out;
       out << "Event mouse_button_pressed : " << _button;
       return out.str();
@@ -82,7 +83,8 @@ namespace tmt
   public:
     mouse_button_released_event(int button) : mouse_button_event { button } { }
 
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
       std::stringstream out;
       out << "Event mouse_button_released : " << _button;
       return out.str();

@@ -3,7 +3,7 @@
 
 #include "Event.hpp"
 
-// pch include sstream
+// pch sstream
 
 namespace tmt
 {
@@ -42,13 +42,15 @@ namespace tmt
   class API window_resize_event : public event {
   public:
     window_resize_event(unsigned int width, unsigned int height)
-      : __width { width }, __height { height } { }
+      : __width { width }, __height { height }
+    { }
 
     inline unsigned int get_width() const { return __width; }
 
     inline unsigned int get_height() const { return __height; }
 
-    std::string to_string() const override {
+    std::string to_string() const override
+    {
       std::stringstream out;
       out << "Event window_resize : [ " << __width << ", " << __height << " ]";
       return out.str();

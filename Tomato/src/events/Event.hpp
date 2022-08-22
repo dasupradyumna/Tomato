@@ -3,8 +3,8 @@
 
 #include "../Core.hpp"
 
-// pch include functional
-// pch include string
+// pch functional
+// pch string
 
 namespace tmt
 {
@@ -47,40 +47,42 @@ namespace tmt
 
     virtual std::string to_string() const { return get_name(); }
 
-    inline bool is_in_category(event_category category) {
+    inline bool is_in_category(event_category category)
+    {
       return get_category_flags() & category;
     }
+
+    friend class event_dispatcher;
 
   protected:
     bool _handled = false;
   };
 
-#define EVENT_DEBUG_METHODS(type)                     \
- static event_type get_static_type() { return type; } \
- virtual event_type get_event_type() const override { \
-  return get_static_type();                           \
- }                                                    \
+#define EVENT_DEBUG_METHODS(type)                                                 \
+ static event_type get_static_type() { return type; }                             \
+ virtual event_type get_event_type() const override { return get_static_type(); } \
  virtual const char *get_name() const override { return #type; }
 
 #define EVENT_CATEGORY(category) \
  virtual int get_category_flags() const override { return category; }
 
-  inline std::ostream &operator<<(std::ostream &out, const event &ev) {
+  inline std::ostream &operator<<(std::ostream &out, const event &ev)
+  {
     return out << ev.to_string();
   }
 
   class event_dispatcher {
-    template<typename _event_type>
-    using event_func = std::function<bool(_event_type &)>;
+    template<typename _EventType>
+    using event_func = std::function<bool(_EventType &)>;
 
   public:
     event_dispatcher(event &ev) : __ev { ev } { }
 
-    template<typename _event_type>
-    bool dispatch(event_func<_event_type> function) {
-      if (__ev.get_event_type() == _event_type::get_static_type())
-      {
-        __ev._handled = function(*(static_cast<_event_type>(&__ev)));
+    template<typename _EventType>
+    bool dispatch(event_func<_EventType> function)
+    {
+      if (__ev.get_event_type() == _EventType::get_static_type()) {
+        __ev._handled = function(*(static_cast<_EventType>(&__ev)));
         return true;
       }
       return false;
